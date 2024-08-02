@@ -1,0 +1,102 @@
+@Vitorht ➜ /workspaces/codespaces-blank $ mkdir exercicio1
+@Vitorht ➜ /workspaces/codespaces-blank $ cd exercicio1 /
+bash: cd: too many arguments
+@Vitorht ➜ /workspaces/codespaces-blank $ cd exercicio1/
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 $ git init
+Initialized empty Git repository in /workspaces/codespaces-blank/exercicio1/.git/
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ echo 01 > arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git add arquivo.txt 
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   arquivo.txt
+
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git commit -m "git add example - arquivo.txt "
+[main (root-commit) 713c137] git add example - arquivo.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ echo 02 > arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $  git diff
+diff --git a/arquivo.txt b/arquivo.txt
+index 8a0f05e..9e22bcb 100644
+--- a/arquivo.txt
++++ b/arquivo.txt
+@@ -1 +1 @@
+-01
++02
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git add arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   arquivo.txt
+
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git diff --cached arquivo.txt
+diff --git a/arquivo.txt b/arquivo.txt
+index 8a0f05e..9e22bcb 100644
+--- a/arquivo.txt
++++ b/arquivo.txt
+@@ -1 +1 @@
+-01
++02
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ echo 03 > arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $  git diff arquivo.txt
+diff --git a/arquivo.txt b/arquivo.txt
+index 9e22bcb..75016ea 100644
+--- a/arquivo.txt
++++ b/arquivo.txt
+@@ -1 +1 @@
+-02
++03
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git restore --staged arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ gis status
+bash: gis: command not found
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   arquivo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git add arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git commit -m "Atualiza arquivo.txt com 
+o conteudo 03 "
+[main 86de8ad] Atualiza arquivo.txt com o conteudo 03
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git log
+commit 86de8ad7526c3a2805d997f50acc8fb6420a22b0 (HEAD -> main)
+Author: Vitor Tokushige <vitorht@hotmail.com>
+Date:   Fri Aug 2 01:20:14 2024 +0000
+
+    Atualiza arquivo.txt com o conteudo 03
+
+commit 713c137ffc73256c131905e76741f4b7ae628d0b
+Author: Vitor Tokushige <vitorht@hotmail.com>
+Date:   Fri Aug 2 01:15:20 2024 +0000
+
+    git add example - arquivo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ echo "*.txt "> .gitignore
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ touch novo.txt
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+@Vitorht ➜ /workspaces/codespaces-blank/exercicio1 (main) $ 
